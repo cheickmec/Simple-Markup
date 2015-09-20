@@ -22,7 +22,11 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
+<<<<<<< HEAD
        4,   14, // methods
+=======
+       1,   14, // methods
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -30,17 +34,25 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
+<<<<<<< HEAD
       12,   11,   11,   11, 0x08,
       19,   11,   11,   11, 0x08,
       26,   11,   11,   11, 0x08,
       33,   11,   11,   11, 0x08,
+=======
+      12,   11,   11,   11, 0x0a,
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindow[] = {
+<<<<<<< HEAD
     "MainWindow\0\0open()\0save()\0quit()\0"
     "updateView()\0"
+=======
+    "MainWindow\0\0updateView()\0"
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -49,10 +61,14 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_ASSERT(staticMetaObject.cast(_o));
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
+<<<<<<< HEAD
         case 0: _t->open(); break;
         case 1: _t->save(); break;
         case 2: _t->quit(); break;
         case 3: _t->updateView(); break;
+=======
+        case 0: _t->updateView(); break;
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
         default: ;
         }
     }
@@ -91,9 +107,15 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
+<<<<<<< HEAD
         if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 4;
+=======
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
     }
     return _id;
 }

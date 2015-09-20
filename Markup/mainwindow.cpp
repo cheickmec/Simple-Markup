@@ -8,6 +8,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+<<<<<<< HEAD
     ////////////// WINDOW ICON ///////////////////
     this->setWindowIcon(QIcon("../resources/icon.png"));
 
@@ -19,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent)
     saveAction = new QAction("Save", this);
     exitAction = new QAction("Exit", this);
     //Resize main window
+=======
+    //Set Fixed size for main window
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
     this->resize(1000,1000);
     ///////////////////////////////////////////////
     //Declare Horizontal Layout and set spacing
@@ -28,9 +32,15 @@ MainWindow::MainWindow(QWidget *parent)
     /////////Set Text Edit Region
     ///////////////////////////////////////////////
     left_pane = new QTextEdit(this);
+<<<<<<< HEAD
     left_pane->resize((this->width()/2)-2 , this->height());
     right_pane = new QWebView(this);
     right_pane->resize((this->width()/2)-2,this->height());
+=======
+    left_pane->setFixedSize((this->width()/2)-2 , this->height());
+    right_pane = new QWebView(this);
+    right_pane->setFixedSize((this->width()/2)-2,this->height());
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 
     ////////////////////////////////////////////////
     //////// Add both regions to horizontal Layout
@@ -53,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     ////////////////////////////////////////////////////////////////////
     ///// CONNECT SIGNAL TO EVENT //////////////////////////////////////
     connect(left_pane, SIGNAL(textChanged()), this , SLOT(updateView()));
+<<<<<<< HEAD
     connect(openAction, SIGNAL(triggered()),this,SLOT(open()));
     connect(saveAction, SIGNAL(triggered()),this,SLOT(save()));
     connect(exitAction, SIGNAL(triggered()),qApp,SLOT(quit()));
@@ -64,6 +75,9 @@ MainWindow::MainWindow(QWidget *parent)
     fileMenu->addAction(saveAction);
     fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
+=======
+
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -72,10 +86,16 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 }
+<<<<<<< HEAD
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ////////////////// Parser //////////////////////////////////////////+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=======
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////////////////// Parser /////////////////////////////////////////+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 QString Parser (QString str){
     //TODO
     QString str2 = "<html> <body>" + str + "<body> </html>";
@@ -90,6 +110,7 @@ void MainWindow::updateView(){
     text = Parser(text);
     right_pane->setHtml(text);
 }
+<<<<<<< HEAD
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //////////////// SLOT: File Opener //////////////////////////////////+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -126,3 +147,6 @@ void MainWindow::quit(){
   if(messageBox.exec() == QMessageBox::Yes)
       this->quit();
 }
+=======
+
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
