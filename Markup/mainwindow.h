@@ -11,20 +11,20 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QIcon>
+#include <QShortcut>
+#include <QTimer>
 ///////////////////////////////////////////////////////////////////////////////
-typedef enum headerFlag {
-    NO_HEADER = 0,
-    H1 = 1,
-    H2 = 2
-} headerFlag;
+
 ///////////////////////////////////////////////////////////////////////////////
 void aSlot(QString& st1, QString& st2);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void divideString(QString& str);
 void conquerString(QStringList& list);
-void StripHeaders(QStringList& list, QRegExp reg1, QRegExp reg2, QString headerType);
-bool isH1(QString str);
-
+void StripHeadersAndAsterix(QStringList& list, QRegExp reg1, QRegExp reg2, QString headerType,bool AsterixSwitch);
+void processHeaders(QString& str, QRegExp reg1, QRegExp reg2, QString headerType);
+void processAsterix(QString& str);
+bool isHeader(QString str);
+int findLastOf(const QString str, const QChar ch,int downFrom);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class MainWindow : public QMainWindow
 {
@@ -43,6 +43,9 @@ private:
 //******************************************//
     QTextEdit *left_pane = NULL;
     QWebView *right_pane = NULL;
+//******** SHORTCUTS ***********************//
+    QShortcut* openShortCut;
+    QShortcut* saveShortCut;
 
 //******** FILE ACTIONS ********************//
 //******************************************//

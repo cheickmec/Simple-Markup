@@ -6,9 +6,9 @@
 #include <QDebug>
 
 QTextStream out(stdout);
-//+++++++++++++++++++++++++++++++++++++++++++++++++++
-/////////////////  Constructor  ////////////////////+
-//+++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/////////////////  Constructor  //////////////////////////////////+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -16,10 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
     ////////////// WINDOW ICON ///////////////////
     this->setWindowIcon(QIcon("../resources/icon.png"));
 
-    ////////////// WINDOW TITLE ///////////////////
+    ////////////// WINDOW TITLE ////////////////////////////////////////
     setWindowTitle("CHEICK BERTHE | Simple Markup");
 
-    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////
     openAction = new QAction("&Open", this);
     saveAction = new QAction("Save", this);
     exitAction = new QAction("Exit", this);
@@ -44,22 +44,27 @@ MainWindow::MainWindow(QWidget *parent)
     left_pane->setFixedSize((this->width()/2)-2 , this->height());
     right_pane->setFixedSize((this->width()/2)-2,this->height());
 
-    ////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
     //////// Add both regions to horizontal Layout
-    ///////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
     hbox->addWidget(left_pane);
     hbox->setSpacing(4);
     hbox->addWidget(right_pane);
 
-    ////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////
     /////////// Set layout in QWidget
-    ///////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     QWidget *window = new QWidget();
     window->setLayout(hbox);
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ///////////////// SHORTCUTS //////////////////////////////////////////
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    QShortcut* openShortCut = new QShortcut(QKeySequence("Ctrl+O"),this);
+    QShortcut* saveShortCut = new QShortcut(QKeySequence("Ctrl+S"),this);
 
-    ////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////
     // Set QWidget as the central layout of the main window
-    ////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
     setCentralWidget(window);
 
     ////////////////////////////////////////////////////////////////////
@@ -68,7 +73,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(openAction, SIGNAL(triggered()),this,SLOT(open()));
     connect(saveAction, SIGNAL(triggered()),this,SLOT(save()));
     connect(exitAction, SIGNAL(triggered()),qApp,SLOT(quit()));
-
+    connect(openShortCut, SIGNAL(activated()), this, SLOT(open()));
+    connect(saveShortCut, SIGNAL(activated()), this, SLOT(save()));
     ////////////////////////////////////////////////////////////////////
     ///// FileMenu /////////////////////////////////////////////////////
     fileMenu = menuBar()->addMenu("&File");
@@ -76,6 +82,10 @@ MainWindow::MainWindow(QWidget *parent)
     fileMenu->addAction(saveAction);
     fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
+    //////////////////////////////////////////////////////////////////////
+    /// Open "open file" window at application startup
+    ///
+    QTimer::singleShot(0,this,SLOT(open()));
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -120,11 +130,11 @@ void MainWindow::save(){
                 }
            }
 }
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //////////////// SLOT: Exit Application /////////////////////////////+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 void MainWindow::quit(){
-    //TODO
   QMessageBox messageBox;
   messageBox.setWindowTitle("CHEICK BERTHE | Simple Markup");
   messageBox.setText("You are about to close this application");
@@ -137,18 +147,14 @@ void MainWindow::quit(){
 //////////////////////////////////////////////////////////////////////////////
 /// Function Bank
 ///////////////////////////////////////////////////////////////////////////
-bool isH1(QString str){
+bool isHeader(QString str){
     int topString = 0;
     int numberOfequalSign = 0;
     int i = 0;
-    //qDebug()<< "unicode of str[0]"<< str[0]<<endl;
     while(str[i].unicode()!=10){
-       // qDebug()<<str[i].unicode()<<"--";
         topString++;
         i++;
     }
-    //str[i] is the newline character
-
     while(i < str.size()){
         numberOfequalSign++;
         i++;
@@ -156,7 +162,50 @@ bool isH1(QString str){
     //qDebug()<<"top: "<<topString<<" and bottom: "<<numberOfequalSign<<endl;
     if(numberOfequalSign -1 >= topString) return true;
     return false;
-
+}
+////////////////////////////////////////////////////////////////////////////////
+void processHeaders(QString &str, QRegExp reg1, QRegExp reg2, QString headerType){
+    QString dummyString;
+    int index1 (-1),index2 (-1);
+    str+=QChar('\n');
+    for(int i = 0; i < str.size(); i++){
+            if(str.indexOf(reg1)>-1)
+            {
+                index1 = str.indexOf(reg1);
+                index2 = str.indexOf(reg2);
+                dummyString = str.mid(index1,index2-index1+1);
+                   if(isHeader(dummyString)) {
+                    QString Replacement = "<"+headerType+">"+dummyString.left(dummyString.indexOf(QChar('\n')))+"</"+headerType+">";
+                    str.replace(index1,dummyString.size(),Replacement);
+                }//end if
+                i +=7;
+            }//end if
+       }//end for-loop
+}
+/////////////////////////////////////////////////////////////////////////////////////
+int findLastOf(const QString str, const QChar ch, int downFrom){
+    int i = downFrom;
+    if(i >= str.size()) return -1;
+    while(i >= 0 && str[i] != ch ){
+        i--;
+    }
+    if(i < 0) return i;
+    else return i;
+}
+////////////////////////////////////////////////////////////////////////////////////
+void processAsterix(QString &str){
+    int index2 = str.size()-1;
+    QRegExp oneAst("\\*{2,2}[\\S\\s]+\\*{2,2}");
+    QRegExp reg2 ("\\*{2,2}");
+    int index1 = str.indexOf(oneAst,0);
+    index2 = findLastOf(str,'*',index2);
+    index2 = findLastOf(str,'*',index2-1);
+    qDebug()<<"index1: "<< index1;
+    qDebug()<<"index2: "<<index2;
+    if(index1 > -1){
+        str = (str.replace(index2,2,"</b>")).replace(index1,2,"<b>");
+    }
+    qDebug()<<"new string is "<< str<<endl;
 }
 //////////////////////////////////////////////////////////////////////
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
@@ -168,34 +217,26 @@ void divideString(QString &str){
     QStringList list = str.split(QRegExp("\n\n+"));
     //join strings of the list into one string separated by 'html paragraph marks' characters
     conquerString(list);
+    //qDebug()<<"list is"<<list<<endl;
     str = " <p> "+list.join(" <p> </p> ") + " </p> ";
 }
 ///////////////////////////////////////////////////////////////////////////////
-void StripHeaders(QStringList &list, QRegExp reg1, QRegExp reg2, QString headerType){
+void StripHeadersAndAsterix(QStringList &list, QRegExp reg1, QRegExp reg2, QString headerType, bool AsterixSwitch){
     QString dummyString ;
     QStringList list2;
-    QString dummyString2;
-    int index1 (-1),index2 (-1);
-
-
     foreach (dummyString, list) {
-        dummyString+=QChar('\n');
-        for(int i = 0; i < dummyString.size(); i++){
+    /////////////////////////////////////////////////////////////////////
+        processHeaders(dummyString,reg1,reg2,headerType);
+        ///////////////////////////////////////////////////////////////////
+        if(AsterixSwitch){
 
-                if(dummyString.indexOf(reg1)>-1)
-                {
-                    index1 = dummyString.indexOf(reg1);
-                    index2 = dummyString.indexOf(reg2);
-                    dummyString2 = dummyString.mid(index1,index2-index1+1);
-                    if(isH1(dummyString2)) {
-                        QString Replacement = "<"+headerType+">"+dummyString2.left(dummyString2.indexOf(QChar('\n')))+"</"+headerType+">";
-                        dummyString.replace(index1,dummyString2.size(),Replacement);
-                    }//end if
-                    i +=7;
-                }//end if
-           }//end for-loop
+        processAsterix(dummyString);
+        }
+    //////////////////////////////////////////////////////////////////////
         list2.append(dummyString);
+        //qDebug()<<dummyString<<endl;
     }//end foreach
+
     list = list2;
 
 }
@@ -205,16 +246,20 @@ void conquerString(QStringList &list){
     QString H1 ="h1";
     QRegExp rg3 ( QRegExp("[^\n]+\n{1,1}-{1,}\n{1,}")), rg4( QRegExp("-{1,1}\n{1,}"));
     QString H2 = "h2";
-    StripHeaders(list,rg1,rg2,H1);
-    StripHeaders(list,rg3,rg4,H2);
+    StripHeadersAndAsterix(list,rg1,rg2,H1,true);
+
+    StripHeadersAndAsterix(list,rg3,rg4,H2,false);
+
 }//end conquer
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ////////////////// SLOT: update WebView /////////////////////////////+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 void MainWindow::updateView(){
+    qDebug()<<"*********************************************************"<<endl;
     QString text = left_pane->toPlainText();    //get text from TextEdit window
     divideString(text);
-    //text ="<html> <body><p>" + text + "</p></html> </body>";
+    qDebug()<<"text is: "<<text<<endl;
+    text ="<html> <body>" + text + "</html> </body>";
     right_pane->setHtml(text);
     qDebug()<<"*********************************************************"<<endl;
 }

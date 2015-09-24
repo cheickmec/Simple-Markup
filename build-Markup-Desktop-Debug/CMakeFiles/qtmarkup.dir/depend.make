@@ -9,6 +9,7 @@ CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/QObject
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/QPoint
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/QPointF
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/QTextStream
+CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/QTimer
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qalgorithms.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qatomic.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
@@ -40,6 +41,7 @@ CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qatomic_windows.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qatomic_windowsce.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qatomic_x86_64.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qbasicatomic.h
+CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qbasictimer.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qbuffer.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qbytearray.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qchar.h
@@ -84,6 +86,7 @@ CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qstringlist.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qstringmatcher.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qtextcodec.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qtextstream.h
+CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qtimer.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qurl.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qvariant.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtCore/qvector.h
@@ -95,6 +98,7 @@ CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QMainWindow
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QMenuBar
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QMessageBox
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QPlatformWindow
+CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QShortcut
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/QTextEdit
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qabstractscrollarea.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qaction.h
@@ -137,6 +141,7 @@ CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qpolygon.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qrawfont.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qregion.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qrgb.h
+CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qshortcut.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qsizepolicy.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qtabwidget.h
 CMakeFiles/qtmarkup.dir/main.cpp.o: /usr/include/qt4/QtGui/qtextcursor.h
@@ -169,6 +174,7 @@ CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/QPoint
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/QPointF
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/QStringList
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/QTextStream
+CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/QTimer
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qalgorithms.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qatomic.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
@@ -200,6 +206,7 @@ CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qatomic_window
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qatomic_windowsce.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qatomic_x86_64.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qbasicatomic.h
+CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qbasictimer.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qbuffer.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qbytearray.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qchar.h
@@ -246,6 +253,7 @@ CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qstringlist.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qstringmatcher.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qtextcodec.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qtextstream.h
+CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qtimer.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qurl.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qvariant.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtCore/qvector.h
@@ -258,6 +266,7 @@ CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QMainWindow
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QMenuBar
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QMessageBox
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QPlatformWindow
+CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QShortcut
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/QTextEdit
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qabstractscrollarea.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qaction.h
@@ -304,6 +313,7 @@ CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qpolygon.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qrawfont.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qregion.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qrgb.h
+CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qshortcut.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qsizepolicy.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qtabwidget.h
 CMakeFiles/qtmarkup.dir/mainwindow.cpp.o: /usr/include/qt4/QtGui/qtextcursor.h
@@ -334,6 +344,7 @@ CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/QObject
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/QPoint
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/QPointF
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/QTextStream
+CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/QTimer
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qalgorithms.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qatomic.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qatomic_aarch64.h
@@ -365,6 +376,7 @@ CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qatomic_wi
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qatomic_windowsce.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qatomic_x86_64.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qbasicatomic.h
+CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qbasictimer.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qbuffer.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qbytearray.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qchar.h
@@ -409,6 +421,7 @@ CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qstringlis
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qstringmatcher.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qtextcodec.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qtextstream.h
+CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qtimer.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qurl.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qvariant.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtCore/qvector.h
@@ -420,6 +433,7 @@ CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QMainWindow
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QMenuBar
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QMessageBox
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QPlatformWindow
+CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QShortcut
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/QTextEdit
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qabstractscrollarea.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qaction.h
@@ -462,6 +476,7 @@ CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qpolygon.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qrawfont.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qregion.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qrgb.h
+CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qshortcut.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qsizepolicy.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qtabwidget.h
 CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o: /usr/include/qt4/QtGui/qtextcursor.h
