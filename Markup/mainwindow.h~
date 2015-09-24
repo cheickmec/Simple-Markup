@@ -11,21 +11,10 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QIcon>
-///////////////////////////////////////////////////////////////////////////////
-typedef enum headerFlag {
-    NO_HEADER = 0,
-    H1 = 1,
-    H2 = 2
-} headerFlag;
-///////////////////////////////////////////////////////////////////////////////
-void aSlot(QString& st1, QString& st2);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void divideString(QString& str);
-void conquerString(QStringList& list);
-void StripHeaders(QStringList& list, QRegExp reg1, QRegExp reg2, QString headerType);
-bool isH1(QString str);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void aSlot(QString& st1, QString& st2);
+QString Parser (QString str);
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -55,4 +44,3 @@ private:
 };
 
 #endif // MAINWINDOW_H
-

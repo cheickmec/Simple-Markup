@@ -1,18 +1,14 @@
 #include "mainwindow.h"
 #include <QHBoxLayout>
-#include <iostream>
-#include <QTextStream>
-#include <QStringList>
-#include <QDebug>
+#include <iostream> //TOREMOVE
 
-QTextStream out(stdout);
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 /////////////////  Constructor  ////////////////////+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-
+<<<<<<< HEAD
     ////////////// WINDOW ICON ///////////////////
     this->setWindowIcon(QIcon("../resources/icon.png"));
 
@@ -24,10 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
     saveAction = new QAction("Save", this);
     exitAction = new QAction("Exit", this);
     //Resize main window
-
+=======
     //Set Fixed size for main window
-
-    //this->resize(1000,1000);
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
+    this->resize(1000,1000);
     ///////////////////////////////////////////////
     //Declare Horizontal Layout and set spacing
     QHBoxLayout *hbox = new QHBoxLayout;
@@ -36,13 +32,15 @@ MainWindow::MainWindow(QWidget *parent)
     /////////Set Text Edit Region
     ///////////////////////////////////////////////
     left_pane = new QTextEdit(this);
-    right_pane = new QWebView(this);
-
+<<<<<<< HEAD
     left_pane->resize((this->width()/2)-2 , this->height());
+    right_pane = new QWebView(this);
     right_pane->resize((this->width()/2)-2,this->height());
-
+=======
     left_pane->setFixedSize((this->width()/2)-2 , this->height());
+    right_pane = new QWebView(this);
     right_pane->setFixedSize((this->width()/2)-2,this->height());
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 
     ////////////////////////////////////////////////
     //////// Add both regions to horizontal Layout
@@ -65,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     ////////////////////////////////////////////////////////////////////
     ///// CONNECT SIGNAL TO EVENT //////////////////////////////////////
     connect(left_pane, SIGNAL(textChanged()), this , SLOT(updateView()));
+<<<<<<< HEAD
     connect(openAction, SIGNAL(triggered()),this,SLOT(open()));
     connect(saveAction, SIGNAL(triggered()),this,SLOT(save()));
     connect(exitAction, SIGNAL(triggered()),qApp,SLOT(quit()));
@@ -76,6 +75,9 @@ MainWindow::MainWindow(QWidget *parent)
     fileMenu->addAction(saveAction);
     fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
+=======
+
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -84,6 +86,31 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 }
+<<<<<<< HEAD
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////////////////// Parser //////////////////////////////////////////+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=======
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////////////////// Parser /////////////////////////////////////////+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
+QString Parser (QString str){
+    //TODO
+    QString str2 = "<html> <body>" + str + "<body> </html>";
+    return str2;
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////////////////// SLOT: update WebView /////////////////////////////+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+void MainWindow::updateView(){
+    QString text = left_pane->toPlainText();
+    text = Parser(text);
+    right_pane->setHtml(text);
+}
+<<<<<<< HEAD
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //////////////// SLOT: File Opener //////////////////////////////////+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -105,20 +132,7 @@ void MainWindow::open(){
 //////////////// SLOT: File Saver ///////////////////////////////////+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 void MainWindow::save(){
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "",
-    tr("Text Files (*.txt)"));
 
-            if (fileName != "") {
-                QFile file(fileName);
-                if (!file.open(QIODevice::WriteOnly)) {
-                    // error message
-                } else {
-                    QTextStream stream(&file);
-                    stream << left_pane->toPlainText();
-                    stream.flush();
-                    file.close();
-                }
-           }
 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //////////////// SLOT: Exit Application /////////////////////////////+
@@ -133,92 +147,6 @@ void MainWindow::quit(){
   if(messageBox.exec() == QMessageBox::Yes)
       this->quit();
 }
+=======
 
-//////////////////////////////////////////////////////////////////////////////
-/// Function Bank
-///////////////////////////////////////////////////////////////////////////
-bool isH1(QString str){
-    int topString = 0;
-    int numberOfequalSign = 0;
-    int i = 0;
-    //qDebug()<< "unicode of str[0]"<< str[0]<<endl;
-    while(str[i].unicode()!=10){
-       // qDebug()<<str[i].unicode()<<"--";
-        topString++;
-        i++;
-    }
-    //str[i] is the newline character
-
-    while(i < str.size()){
-        numberOfequalSign++;
-        i++;
-    }
-    //qDebug()<<"top: "<<topString<<" and bottom: "<<numberOfequalSign<<endl;
-    if(numberOfequalSign -1 >= topString) return true;
-    return false;
-
-}
-//////////////////////////////////////////////////////////////////////
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-////////////////// Parsers ///////////////////////////////////////////
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
-void divideString(QString &str){
-    //split text and store as strings containing multiples of any successive
-    //characters separated by single 'newline' characters.
-    QStringList list = str.split(QRegExp("\n\n+"));
-    //join strings of the list into one string separated by 'html paragraph marks' characters
-    conquerString(list);
-    str = " <p> "+list.join(" <p> </p> ") + " </p> ";
-}
-///////////////////////////////////////////////////////////////////////////////
-void StripHeaders(QStringList &list, QRegExp reg1, QRegExp reg2, QString headerType){
-    QString dummyString ;
-    QStringList list2;
-    QString dummyString2;
-    int index1 (-1),index2 (-1);
-
-
-    foreach (dummyString, list) {
-        dummyString+=QChar('\n');
-        for(int i = 0; i < dummyString.size(); i++){
-
-                if(dummyString.indexOf(reg1)>-1)
-                {
-                    index1 = dummyString.indexOf(reg1);
-                    index2 = dummyString.indexOf(reg2);
-                    dummyString2 = dummyString.mid(index1,index2-index1+1);
-                    qDebug()<<"index 1: "<<index1 << "index2: "<<index2<<endl;
-                    qDebug() << "substring is: "<<dummyString2<<" of size: "<<dummyString2.size()<<endl;
-                    if(isH1(dummyString2)) {
-                        QString Replacement = "<"+headerType+">"+dummyString2.left(dummyString2.indexOf(QChar('\n')))+"</"+headerType+">";
-                        dummyString.replace(index1,dummyString2.size(),Replacement);
-                    }//end if
-                    i +=7;
-                }//end if
-           }//end for-loop
-        list2.append(dummyString);
-    }//end foreach
-    list = list2;
-
-}
-///////////////////////////////////////////////////////////////////////////////
-void conquerString(QStringList &list){
-    QRegExp rg1 ( QRegExp("[^\n]+\n{1,1}={1,}\n{1,}")), rg2( QRegExp("={1,1}\n{1,}"));
-    QString H1 ="h1";
-    QRegExp rg3 ( QRegExp("[^\n]+\n{1,1}-{1,}\n{1,}")), rg4( QRegExp("-{1,1}\n{1,}"));
-    QString H2 = "h2";
-    StripHeaders(list,rg1,rg2,H1);
-    StripHeaders(list,rg3,rg4,H2);
-}//end conquer
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-////////////////// SLOT: update WebView /////////////////////////////+
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-void MainWindow::updateView(){
-    QString text = left_pane->toPlainText();    //get text from TextEdit window
-    divideString(text);
-    qDebug()<<text<<endl;
-    text ="<html> <body><p>" + text + "</p></html> </body>";
-    right_pane->setHtml(text);
-    qDebug()<<"*********************************************************"<<endl;
-}
-
+>>>>>>> d5f7148a7540593a15f32e6cdfc4e97e6eed2735
