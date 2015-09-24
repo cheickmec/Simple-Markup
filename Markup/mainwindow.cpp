@@ -187,8 +187,6 @@ void StripHeaders(QStringList &list, QRegExp reg1, QRegExp reg2, QString headerT
                     index1 = dummyString.indexOf(reg1);
                     index2 = dummyString.indexOf(reg2);
                     dummyString2 = dummyString.mid(index1,index2-index1+1);
-                    qDebug()<<"index 1: "<<index1 << "index2: "<<index2<<endl;
-                    qDebug() << "substring is: "<<dummyString2<<" of size: "<<dummyString2.size()<<endl;
                     if(isH1(dummyString2)) {
                         QString Replacement = "<"+headerType+">"+dummyString2.left(dummyString2.indexOf(QChar('\n')))+"</"+headerType+">";
                         dummyString.replace(index1,dummyString2.size(),Replacement);
@@ -216,8 +214,7 @@ void conquerString(QStringList &list){
 void MainWindow::updateView(){
     QString text = left_pane->toPlainText();    //get text from TextEdit window
     divideString(text);
-    qDebug()<<text<<endl;
-    text ="<html> <body><p>" + text + "</p></html> </body>";
+    //text ="<html> <body><p>" + text + "</p></html> </body>";
     right_pane->setHtml(text);
     qDebug()<<"*********************************************************"<<endl;
 }

@@ -1,0 +1,99 @@
+Determining if the Q_WS_WIN exist failed with the following output:
+Change Dir: /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_62929/fast"
+/usr/bin/make -f CMakeFiles/cmTC_62929.dir/build.make CMakeFiles/cmTC_62929.dir/build
+make[1]: Entering directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_62929.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTC_62929.dir/CheckSymbolExists.cxx.o -c /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+   return ((int*)(&Q_WS_WIN))[argc];
+                   ^
+CMakeFiles/cmTC_62929.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_62929.dir/CheckSymbolExists.cxx.o' failed
+make[1]: Leaving directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTC_62929.dir/CheckSymbolExists.cxx.o] Error 1
+Makefile:126: recipe for target 'cmTC_62929/fast' failed
+make: *** [cmTC_62929/fast] Error 2
+
+File /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_WIN
+  return ((int*)(&Q_WS_WIN))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_QWS exist failed with the following output:
+Change Dir: /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ff252/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ff252.dir/build.make CMakeFiles/cmTC_ff252.dir/build
+make[1]: Entering directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ff252.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTC_ff252.dir/CheckSymbolExists.cxx.o -c /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+   return ((int*)(&Q_WS_QWS))[argc];
+                   ^
+CMakeFiles/cmTC_ff252.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ff252.dir/CheckSymbolExists.cxx.o' failed
+make[1]: Leaving directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTC_ff252.dir/CheckSymbolExists.cxx.o] Error 1
+Makefile:126: recipe for target 'cmTC_ff252/fast' failed
+make: *** [cmTC_ff252/fast] Error 2
+
+File /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_QWS
+  return ((int*)(&Q_WS_QWS))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the Q_WS_MAC exist failed with the following output:
+Change Dir: /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b9c26/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9c26.dir/build.make CMakeFiles/cmTC_b9c26.dir/build
+make[1]: Entering directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b9c26.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTC_b9c26.dir/CheckSymbolExists.cxx.o -c /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+   return ((int*)(&Q_WS_MAC))[argc];
+                   ^
+CMakeFiles/cmTC_b9c26.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b9c26.dir/CheckSymbolExists.cxx.o' failed
+make[1]: Leaving directory '/home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTC_b9c26.dir/CheckSymbolExists.cxx.o] Error 1
+Makefile:126: recipe for target 'cmTC_b9c26/fast' failed
+make: *** [cmTC_b9c26/fast] Error 2
+
+File /home/student/Documents/myGit/build-Markup-Desktop-Debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <QtCore/qglobal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef Q_WS_MAC
+  return ((int*)(&Q_WS_MAC))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

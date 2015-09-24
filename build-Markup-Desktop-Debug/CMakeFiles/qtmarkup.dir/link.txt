@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/qtmarkup.dir/main.cpp.o CMakeFiles/qtmarkup.dir/mainwindow.cpp.o CMakeFiles/qtmarkup.dir/moc_mainwindow.cxx.o  -o qtmarkup -rdynamic /usr/lib/x86_64-linux-gnu/libQtGui.so /usr/lib/x86_64-linux-gnu/libQtWebKit.so /usr/lib/x86_64-linux-gnu/libQtGui.so /usr/lib/x86_64-linux-gnu/libQtNetwork.so /usr/lib/x86_64-linux-gnu/libQtCore.so 
